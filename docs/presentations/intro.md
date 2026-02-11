@@ -3,7 +3,7 @@ marp: true
 theme: adobe
 paginate: true
 header: 'AI-First Development'
-footer: 'github.com/adobe/ai-first-guidelines'
+footer: 'github.com/solaris007/ai-first-guidelines'
 ---
 
 <!-- _class: lead -->
@@ -188,7 +188,7 @@ ai-first-guidelines/
 ```
 
 ### Get Involved
-- **Repo**: github.com/adobe/ai-first-guidelines
+- **Repo**: github.com/solaris007/ai-first-guidelines
 - **Issues**: Questions, ideas, feedback welcome
 - **PRs**: Contributions encouraged
 
@@ -207,4 +207,4 @@ Hands-on guide to set up your environment
 
 **[Your Name]** — [your-email]
 
-github.com/adobe/ai-first-guidelines
+github.com/solaris007/ai-first-guidelines

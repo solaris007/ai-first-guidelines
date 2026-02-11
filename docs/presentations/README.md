@@ -56,8 +56,8 @@ marp intro.md --pptx
 ### Online (GitHub Pages)
 
 Presentations are published automatically at:
-- [Intro](https://adobe.github.io/ai-first-guidelines/presentations/intro.html)
-- [Getting Started](https://adobe.github.io/ai-first-guidelines/presentations/getting-started.html)
+- [Intro](https://solaris007.github.io/ai-first-guidelines/presentations/intro.html)
+- [Getting Started](https://solaris007.github.io/ai-first-guidelines/presentations/getting-started.html)
 
 ## Marp Syntax Quick Reference
 

@@ -1,9 +1,9 @@
 site_name: AI-First Development Guidelines
 site_description: Comprehensive guidelines for teams adopting AI-first development practices
-site_url: https://adobe.github.io/ai-first-guidelines/
+site_url: https://solaris007.github.io/ai-first-guidelines/
 
-repo_name: adobe/ai-first-guidelines
-repo_url: https://github.com/adobe/ai-first-guidelines
+repo_name: solaris007/ai-first-guidelines
+repo_url: https://github.com/solaris007/ai-first-guidelines
 
 theme:
   name: material

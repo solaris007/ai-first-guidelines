@@ -67,7 +67,7 @@ deploy: build
 	@echo "Deploying to GitHub Pages..."
 	ghp-import -n -p -f site
 	@echo "Deployed! Site will be available at:"
-	@echo "https://adobe.github.io/ai-first-guidelines/"
+	@echo "https://solaris007.github.io/ai-first-guidelines/"
 
 # Clean build artifacts
 clean:

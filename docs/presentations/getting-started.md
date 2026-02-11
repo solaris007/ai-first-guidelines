@@ -3,7 +3,7 @@ marp: true
 theme: adobe
 paginate: true
 header: 'AI-First Development'
-footer: 'github.com/adobe/ai-first-guidelines'
+footer: 'github.com/solaris007/ai-first-guidelines'
 ---
 
 <!-- _class: lead -->
@@ -327,7 +327,7 @@ Real example: S3 backup generating $111K/year in costs
 
 ```bash
 # 1. Clone the repo
-git clone github.com/adobe/ai-first-guidelines
+git clone github.com/solaris007/ai-first-guidelines
 
 # 2. Copy example CLAUDE.md to your project
 cp docs/examples/project-claude-md.md ~/my-project/CLAUDE.md
