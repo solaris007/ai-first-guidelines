@@ -1,0 +1,89 @@
+site_name: AI-First Development Guidelines
+site_description: Comprehensive guidelines for teams adopting AI-first development practices
+site_url: https://adobe.github.io/ai-first-guidelines/
+
+repo_name: adobe/ai-first-guidelines
+repo_url: https://github.com/adobe/ai-first-guidelines
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Foundations:
+    - Philosophy: 01-foundations/philosophy.md
+    - Workspace Setup: 01-foundations/workspace-setup.md
+    - Tools Checklist: 01-foundations/tools-checklist.md
+  - Development Lifecycle:
+    - Overview: 02-lifecycle/overview.md
+    - 1. Design & Spec: 02-lifecycle/01-design-spec.md
+    - 2. Planning: 02-lifecycle/02-planning.md
+    - 3. Implementation: 02-lifecycle/03-implementation.md
+    - 4. Validation: 02-lifecycle/04-validation.md
+    - 5. Closure: 02-lifecycle/05-closure.md
+  - Templates:
+    - Spec Proposal: 03-templates/spec-proposal.md
+    - Migration Plan: 03-templates/migration.md
+    - Decision Record: 03-templates/decision-record.md
+    - TODO.md: 03-templates/TODO.md
+  - Configuration:
+    - Overview: 04-configuration/README.md
+    - AI Tools:
+      - Claude Code: 04-configuration/ai-tools/claude-code.md
+      - Cursor: 04-configuration/ai-tools/cursor.md
+      - Copilot: 04-configuration/ai-tools/copilot.md
+    - Plugins:
+      - Overview: 04-configuration/plugins/README.md
+      - Superpowers: 04-configuration/plugins/superpowers.md
+      - Adobe Skills: 04-configuration/plugins/adobe-skills.md
+    - MCP:
+      - Overview: 04-configuration/mcp/overview.md
+      - Servers: 04-configuration/mcp/servers.md
+      - Workflows: 04-configuration/mcp/workflows.md
+    - Environment & Secrets: 04-configuration/env-secrets.md
+  - Guardrails:
+    - MUST Rules: 05-guardrails/must-rules.md
+    - SHOULD Rules: 05-guardrails/should-rules.md
+    - Anti-Patterns: 05-guardrails/anti-patterns.md
+  - Examples:
+    - Workspace CLAUDE.md: examples/workspace-claude-md.md
+    - Project CLAUDE.md: examples/project-claude-md.md
+  - Presentations:
+    - Overview: presentations/README.md
