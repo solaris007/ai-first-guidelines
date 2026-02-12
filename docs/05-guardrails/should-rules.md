@@ -232,6 +232,8 @@ Unlike MUST rules, AI assistants can help you deviate from SHOULD rules when you
 
 *Exception: Some duplication between CLAUDE.md and .cursorrules may be needed for cross-tool support*
 
+Cursor users can adopt [Adobe Cursor Rules](../04-configuration/plugins/adobe-cursor-rules.md) for automated security enforcement through scoped `.mdc` rule files that activate based on context.
+
 ### AI-Generated Artifacts
 
 - **SHOULD** capture plans and designs in persistent files, not just AI chat sessions
@@ -272,3 +274,4 @@ For significant deviations:
 
 - [MUST Rules](must-rules.md) - Non-negotiable requirements
 - [Anti-Patterns](anti-patterns.md) - Common mistakes
+- [Adobe Cursor Rules](../04-configuration/plugins/adobe-cursor-rules.md) - Automated security enforcement for Cursor

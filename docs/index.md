@@ -55,7 +55,7 @@ AI tool configuration, plugins, and MCP integration:
 | Category | Documents |
 |----------|-----------|
 | **AI Tools** | [Claude Code](04-configuration/ai-tools/claude-code.md), [Cursor](04-configuration/ai-tools/cursor.md), [Copilot](04-configuration/ai-tools/copilot.md) |
-| **Plugins** | [Overview](04-configuration/plugins/README.md), [Superpowers](04-configuration/plugins/superpowers.md) |
+| **Plugins** | [Overview](04-configuration/plugins/README.md), [Superpowers](04-configuration/plugins/superpowers.md), [Adobe Skills](04-configuration/plugins/adobe-skills.md), [Adobe Cursor Rules](04-configuration/plugins/adobe-cursor-rules.md) |
 | **MCP** | [Overview](04-configuration/mcp/overview.md), [Servers](04-configuration/mcp/servers.md), [Workflows](04-configuration/mcp/workflows.md) |
 | **Secrets** | [Environment & Secrets](04-configuration/env-secrets.md) |
 
@@ -93,6 +93,7 @@ Concrete configuration examples:
 | [Workspace CLAUDE.md](examples/workspace-claude-md.md) | Workspace-level configuration |
 | [Project CLAUDE.md](examples/project-claude-md.md) | Project-specific overrides |
 | [.mcp.json](examples/mcp-json-example.json) | MCP server configuration |
+| [Cursor Rules Setup](examples/cursor-rules-setup.md) | Project bootstrap with Cursor rules + Claude Code |
 
 ### [Presentations](presentations/)
 

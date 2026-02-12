@@ -27,7 +27,7 @@ This section covers configuration for AI-assisted development tools, plugins, an
 | Tool | Config File | Documentation |
 |------|-------------|---------------|
 | [Claude Code](ai-tools/claude-code.md) | `CLAUDE.md` | Setup, CLAUDE.md patterns, CLI usage |
-| [Cursor](ai-tools/cursor.md) | `.cursorrules` | Setup, rules file patterns |
+| [Cursor](ai-tools/cursor.md) | `.cursorrules` / `.cursor/rules/*.mdc` | Setup, rules file patterns, `.mdc` rule modes |
 | [GitHub Copilot](ai-tools/copilot.md) | VS Code settings | Setup, prompting strategies |
 
 ### Plugins
@@ -35,6 +35,7 @@ This section covers configuration for AI-assisted development tools, plugins, an
 | Plugin | For Tool | Documentation |
 |--------|----------|---------------|
 | [Superpowers](plugins/superpowers.md) | Claude Code | Structured workflows, TDD, planning |
+| [Adobe Cursor Rules](plugins/adobe-cursor-rules.md) | Cursor | 45+ security and development `.mdc` rules from PASS AIDE |
 
 ### MCP (Model Context Protocol)
 

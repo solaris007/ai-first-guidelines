@@ -20,7 +20,11 @@ Plugins add functionality on top of base AI tools:
 
 ### Cursor
 
-Cursor uses extensions from the VS Code marketplace. It includes built-in AI features; additional extensions are generally not needed for AI-assisted workflows.
+| Plugin | Description | Documentation |
+|--------|-------------|---------------|
+| [Adobe Cursor Rules](adobe-cursor-rules.md) | 45+ curated `.mdc` rule files for security and development from Adobe's PASS AIDE team | [Details](adobe-cursor-rules.md) |
+
+Cursor also supports extensions from the VS Code marketplace. It includes built-in AI features; additional extensions are generally not needed beyond rule files for AI-assisted workflows.
 
 ### GitHub Copilot
 

@@ -73,6 +73,7 @@ nav:
       - Overview: 04-configuration/plugins/README.md
       - Superpowers: 04-configuration/plugins/superpowers.md
       - Adobe Skills: 04-configuration/plugins/adobe-skills.md
+      - Adobe Cursor Rules: 04-configuration/plugins/adobe-cursor-rules.md
     - MCP:
       - Overview: 04-configuration/mcp/overview.md
       - Servers: 04-configuration/mcp/servers.md
@@ -85,5 +86,6 @@ nav:
   - Examples:
     - Workspace CLAUDE.md: examples/workspace-claude-md.md
     - Project CLAUDE.md: examples/project-claude-md.md
+    - Cursor Rules Setup: examples/cursor-rules-setup.md
   - Presentations:
     - Overview: presentations/README.md

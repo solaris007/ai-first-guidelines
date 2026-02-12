@@ -167,6 +167,115 @@ Full-stack e-commerce application with React frontend and Node.js backend.
 - Don't skip TypeScript errors with @ts-ignore
 ```
 
+## Cursor Rules (.mdc Format)
+
+Cursor's newer `.cursor/rules/*.mdc` format replaces the single `.cursorrules` file with a directory of scoped, frontmatter-driven rule files. Use this format for projects that need structured, domain-organized rules.
+
+### Directory Structure
+
+```
+my-project/
+├── .cursor/
+│   └── rules/
+│       ├── security-global/        # Security baseline
+│       │   ├── security-global-base.mdc
+│       │   └── security-global-api.mdc
+│       ├── security-lang/          # Language-specific
+│       │   └── security-lang-node.mdc
+│       └── project/                # Project-specific
+│           ├── architecture.mdc
+│           └── conventions.mdc
+├── .cursorrules                    # Legacy (optional, still supported)
+└── ...
+```
+
+### .mdc File Format
+
+Each `.mdc` file is markdown with a YAML frontmatter block that controls when the rule activates:
+
+```yaml
+---
+description: Prevent SQL injection in database queries
+globs: "src/db/**/*.ts,src/models/**/*.ts"
+alwaysApply: false
+---
+
+# SQL Safety
+
+- Always use parameterized queries
+- Never concatenate user input into SQL strings
+- Use the ORM's built-in escaping for dynamic queries
+```
+
+### Rule Modes
+
+The frontmatter fields determine how and when a rule activates:
+
+| Mode | Frontmatter | Behavior |
+|------|-------------|----------|
+| **Always Apply** | `alwaysApply: true` | Active in every context, no conditions |
+| **Apply Intelligently** | `alwaysApply: false`, `description` set, no `globs` | Agent decides based on context and the description |
+| **Apply to Specific Files** | `globs` set | Only active when working with files matching the glob pattern |
+| **Apply Manually** | `alwaysApply: false`, no `description`, no `globs` | Only applied when explicitly referenced by name |
+
+**Guidelines for choosing a mode:**
+
+- Use **Always Apply** sparingly - for critical security baselines only
+- Use **Apply Intelligently** for domain rules the agent should pick up from context
+- Use **Apply to Specific Files** for language-specific or directory-scoped rules
+- Use **Apply Manually** for reference material used on demand (e.g., migration guides)
+
+### When to Use .cursorrules vs .mdc
+
+| Scenario | Recommended Format |
+|----------|--------------------|
+| Small project, few rules | `.cursorrules` (simple, single file) |
+| Team-shared security rules | `.mdc` (scoped, domain-organized) |
+| Multi-language project | `.mdc` (file-glob scoping per language) |
+| Adopting adobe-cursor-rules | `.mdc` (required format) |
+| Quick personal project | `.cursorrules` (fastest to set up) |
+
+Both formats can coexist. Cursor loads `.cursorrules` as an "always apply" rule alongside any `.mdc` files.
+
+## Cursor Ignore Files
+
+Cursor provides two ignore files to control what the AI can see and index:
+
+### .cursorignore
+
+Excludes files from AI context. Cursor will not read these files when generating responses.
+
+```
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Secrets
+.env
+.env.*
+
+# Large generated files
+package-lock.json
+pnpm-lock.yaml
+```
+
+### .cursorindexingignore
+
+Excludes files from Cursor's code index. These files won't appear in codebase search results.
+
+```
+# Same exclusions as .cursorignore, plus:
+docs/
+coverage/
+**/__snapshots__/
+.git/
+```
+
+Place both files in your project root. They use `.gitignore` syntax.
+
 ## Cursor Settings
 
 ### Project-Level Settings
@@ -414,25 +523,37 @@ Add a Working Context section to declare defaults and frequently-used commands. 
 - Review rules changes in PRs
 - Document why rules exist (not just what they are)
 
-### Combine with CLAUDE.md
+### Multi-Tool Rule Strategy
 
-If your team uses both Cursor and Claude Code:
+If your team uses multiple AI tools, the same security and convention rules need different packaging for each:
 
-1. Keep core rules in both files
-2. Tool-specific rules in respective files
-3. Consider a shared source document that generates both
+| Aspect | Cursor `.mdc` | CLAUDE.md | `.github/copilot-instructions.md` |
+|--------|---------------|-----------|-----------------------------------|
+| Format | YAML frontmatter + markdown | Plain markdown | Plain markdown |
+| Scoping | `globs`, rule modes | Directory hierarchy | Single file |
+| Loading | Automatic by mode | Always loaded | Always loaded |
+| Strengths | Fine-grained file targeting | Inheritance across directories | GitHub integration |
+
+**Recommended approach:**
+
+1. Maintain canonical rules in one authoritative source (e.g., your `security-global` `.mdc` rules or a shared doc)
+2. Express rules in each tool's native format
+3. Consider a script to generate tool-specific files from the canonical source
 
 ```bash
-# Example: Generate both from a template
-./scripts/generate-ai-rules.sh > .cursorrules
-./scripts/generate-ai-rules.sh > CLAUDE.md
+# Example: Generate both from a shared source
+./scripts/generate-ai-rules.sh --format cursorrules > .cursorrules
+./scripts/generate-ai-rules.sh --format claude > CLAUDE.md
+./scripts/generate-ai-rules.sh --format copilot > .github/copilot-instructions.md
 ```
+
+See the [Cursor Rules Setup](../../examples/cursor-rules-setup.md) example for a complete multi-tool project scaffold.
 
 ## Comparison with CLAUDE.md
 
 | Aspect | .cursorrules | CLAUDE.md |
 |--------|--------------|-----------|
-| Format | Plain text | Markdown |
+| Format | Plain text (`.cursorrules`) or YAML frontmatter + markdown (`.mdc`) | Markdown |
 | Location | Project root | Project root or workspace |
 | Hierarchy | Single file | Can inherit from parent dirs |
 | MCP Support | Via .cursor/mcp.json | Via .mcp.json |
@@ -440,6 +561,8 @@ If your team uses both Cursor and Claude Code:
 
 ## See Also
 
+- [Adobe Cursor Rules](../plugins/adobe-cursor-rules.md) - 45+ curated `.mdc` rules for security and development
+- [Cursor Rules Setup Example](../../examples/cursor-rules-setup.md) - Bootstrap a project with Cursor rules + Claude Code
 - [Claude Code Configuration](claude-code.md)
 - [Copilot Configuration](copilot.md)
 - [MCP Overview](../mcp/overview.md)

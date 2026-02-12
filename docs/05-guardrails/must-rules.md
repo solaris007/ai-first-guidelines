@@ -228,8 +228,13 @@ Automate where possible:
 - Branch protection enforces PR workflow
 - Test requirements enforce coverage
 
+### In Cursor Rules
+
+Cursor users can adopt [Adobe Cursor Rules](../04-configuration/plugins/adobe-cursor-rules.md) to enforce MUST-level security rules directly in the AI assistant. The `security-global` domain provides machine-enforceable equivalents of the security MUST rules above - input validation, injection prevention, secrets handling, and more - as `.mdc` rule files that activate automatically in Cursor.
+
 ## See Also
 
 - [SHOULD Rules](should-rules.md) - Strong recommendations
 - [Anti-Patterns](anti-patterns.md) - Common mistakes
 - [Environment & Secrets](../04-configuration/env-secrets.md) - Secure secrets handling
+- [Adobe Cursor Rules](../04-configuration/plugins/adobe-cursor-rules.md) - Machine-enforceable security rules for Cursor
