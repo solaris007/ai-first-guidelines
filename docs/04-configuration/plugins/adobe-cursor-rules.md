@@ -166,9 +166,14 @@ The PASS AIDE team has announced these upcoming additions:
 - **Cursor extension for auto-updates** - Keep rules current without manual copying
 - **DevHome/Flex integration** - Default rule onboarding for Adobe developers
 
+## Relationship to Adobe AI Skills
+
+The security domains in this collection (global, lang, cloud) have counterparts in [Adobe AI Skills](https://github.com/Adobe-AIFoundations/adobe-skills) packaged as SKILL.md files for Claude Code. See the [Adobe Skills](adobe-skills.md#adobe-ai-skills-adobe-aifoundations) page for details on using both together.
+
 ## See Also
 
 - [Cursor Configuration](../ai-tools/cursor.md) - Cursor setup including `.mdc` rule format
 - [Cursor Rules Setup Example](../../examples/cursor-rules-setup.md) - Bootstrap example with both Cursor and Claude Code
+- [Adobe Skills](adobe-skills.md) - AI agent skills including security skills for Claude Code
 - [MUST Rules](../../05-guardrails/must-rules.md) - Non-negotiable security and quality rules
 - [Cursor Rules documentation](https://docs.cursor.com/context/rules) - Official Cursor docs

@@ -127,9 +127,36 @@ MCP tools used:
 - conversations_add_message (notify team via Slack)
 ```
 
+## Adobe AI Skills (Adobe-AIFoundations)
+
+[Adobe-AIFoundations/adobe-skills](https://github.com/Adobe-AIFoundations/adobe-skills) is a broader collection of AI agent skills maintained by Adobe's AI Foundations team. While the AEM EDS skills above focus on Edge Delivery Services development, Adobe AI Skills covers security, branding, documentation, and AEM Java tooling.
+
+### Available Skills
+
+| Category | Skills | Description |
+|----------|--------|-------------|
+| **Security** | `adobe-security-foundations`, `adobe-security-lang`, `adobe-security-cloud`, `adobe-security-services`, `adobe-security-audit` | Foundational security principles, language-specific patterns (Python, Java, Node.js, PHP, Ruby, Rust, C, C++), cloud infrastructure security (AWS, Azure, GCP, Kubernetes, Terraform), service-layer security, and audit workflows with Snyk |
+| **Content & Docs** | `adobe-branding`, `adobe-whitepaper`, `ai-writing-detector` | Brand guidelines compliance, PDF whitepaper generation with Adobe Clean typography, and AI-generated writing pattern detection |
+| **Agent Development** | `devkit-ai-agent` | LangGraph sample agent repo generation via `create-myapp` CLI |
+| **AEM Java** | `aem-module-java17`, `osgi-scr-migrator` | Java 17 migration for AEM Maven projects, Felix SCR to OSGi R6/R7 annotation migration |
+
+### Relationship to Adobe Cursor Rules
+
+The security skills in this collection cover the same domains as [Adobe Cursor Rules](adobe-cursor-rules.md) (global, lang, cloud) but packaged as SKILL.md files for Claude Code rather than `.mdc` files for Cursor. Teams using both tools get consistent security coverage: Cursor rules activate automatically in the editor, while skills guide Claude Code during implementation.
+
+### Referenced Skill Collections
+
+The repo also links to additional skill collections from across Adobe:
+
+- [OneAdobe/claude-workflow](https://github.com/OneAdobe/claude-workflow) - Agentic development workflow with specialized agents (Technical Analyst, Software Architect, TDD Engineer, QA Validator)
+- [addyosmani/web-quality-skills](https://github.com/addyosmani/web-quality-skills) - Web quality audits for performance, accessibility, SEO, and Core Web Vitals
+- [adobe/helix-website skills](https://github.com/adobe/helix-website/tree/main/.claude/skills) - AEM EDS skills (the upstream source for the skills documented above)
+
 ## See Also
 
 - [Superpowers Plugin](superpowers.md) - General-purpose development workflow skills
+- [Adobe Cursor Rules](adobe-cursor-rules.md) - Security and development rules for Cursor (.mdc format)
 - [Claude Code Configuration](../ai-tools/claude-code.md) - Base tool configuration
 - [MCP Overview](../mcp/overview.md) - External tool integration
-- [Adobe Skills on GitHub](https://github.com/adobe/skills)
+- [Adobe Skills (AEM EDS) on GitHub](https://github.com/adobe/skills)
+- [Adobe AI Skills on GitHub](https://github.com/Adobe-AIFoundations/adobe-skills)
