@@ -44,8 +44,10 @@ Ready-to-use templates:
 | Template | Use Case |
 |----------|----------|
 | [Spec Proposal](03-templates/spec-proposal.md) | Design documents, feature proposals |
+| [Contract](03-templates/contract.md) | Component-level Design by Contract specs |
 | [Migration Plan](03-templates/migration.md) | System migrations, refactoring plans |
 | [Decision Record](03-templates/decision-record.md) | Architecture Decision Records (ADRs) |
+| [Pull Request](03-templates/pull-request-template.md) | PR template with AI usage disclosure |
 | [TODO.md](03-templates/TODO.md) | Task tracking (Jira alternative) |
 
 ### [04 - Configuration](04-configuration/)
@@ -67,11 +69,16 @@ Rules and anti-patterns:
 |----------|-------------|
 | [MUST Rules](05-guardrails/must-rules.md) | Non-negotiable requirements |
 | [SHOULD Rules](05-guardrails/should-rules.md) | Strong recommendations |
+| [AI Task Boundaries](05-guardrails/ai-task-boundaries.md) | What to delegate to AI vs own manually |
 | [Anti-Patterns](05-guardrails/anti-patterns.md) | Common mistakes to avoid |
 
 ### [06 - Adoption](06-adoption/)
 
-Team adoption case studies and comparisons.
+Team adoption guides and case studies:
+
+| Document | Description |
+|----------|-------------|
+| [Onboarding Guide](06-adoption/onboarding-guide.md) | Getting started as a new engineer on an AI-first team |
 
 ### [07 - Leadership](07-leadership/)
 

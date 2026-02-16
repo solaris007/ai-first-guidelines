@@ -140,6 +140,108 @@ edge cases or requirements?
 - Never commit secrets (see [Environment & Secrets](../04-configuration/env-secrets.md))
 - Validate AI-generated code that handles user input
 
+## Tests-First Development with Design by Contract
+
+For non-trivial features, the transition from spec to code benefits from a structured methodology. Tests-First Development combined with Design by Contract (TFD+DBC) provides a repeatable sequence: define the contract, generate tests from it, implement the minimum code to pass those tests, then review.
+
+This complements - rather than replaces - the spec-driven planning workflow. Specs operate at the project level ("what to build and why"). Contracts operate at the component level ("what this specific component does, precisely enough for an AI to implement it").
+
+### When to Use TFD+DBC
+
+**SHOULD use for:**
+- New components, modules, or services
+- Significant refactors that change behavior
+- Features with complex input/output relationships
+- Components with meaningful error handling
+
+**Skip for:**
+- Bug fixes with clear expected behavior
+- Configuration changes
+- Copy/paste from existing patterns
+- Trivial additions (adding a field, updating a string)
+
+### The Workflow
+
+#### Step 1: Write or Review the Contract
+
+Before writing any implementation code, define what the component does. A contract captures intent, inputs, outputs, pre-conditions, post-conditions, and error handling.
+
+Use the [Contract Template](../03-templates/contract.md) to structure this. The contract SHOULD be concrete enough that someone unfamiliar with the codebase could write tests from it.
+
+```
+Human: I need to build a rate limiter for our API endpoints.
+       Here's the contract I've drafted: [paste contract]
+       Review it - am I missing anything?
+
+AI:    The contract covers the core behavior well. Two gaps:
+       1. No post-condition for what happens when the limit resets
+       2. The error handling doesn't specify the response format
+          for rate-limited requests (status code, retry-after header)
+```
+
+#### Step 2: Generate Tests from the Contract
+
+With the contract finalized, ask the AI to generate tests - before any implementation exists. The tests encode the contract's expectations as executable assertions.
+
+```
+Human: Here's the finalized contract for the rate limiter.
+       Generate tests from this contract. Cover the happy path,
+       edge cases, and all error conditions listed in the contract.
+       Follow the test patterns in our existing test suite.
+
+AI:    Here are the tests derived from the contract:
+       - allows requests under the limit
+       - rejects requests at the limit with 429 and retry-after header
+       - resets the counter after the window expires
+       - handles concurrent requests correctly
+       - returns appropriate error when the backing store is unavailable
+       [generates test code]
+```
+
+Review the generated tests against the contract. Every post-condition and error case in the contract SHOULD have a corresponding test. If a test seems wrong, the contract might be ambiguous - fix the contract first, then regenerate.
+
+#### Step 3: Implement to Pass the Tests
+
+Now implement the minimum code to make the tests pass. The AI has clear targets - the tests - and the contract provides design constraints.
+
+```
+Human: Now implement the rate limiter to pass these tests.
+       Follow the contract for design decisions.
+       Keep it minimal - just enough to pass.
+
+AI:    [generates implementation]
+       All 8 tests pass. I kept the implementation simple:
+       - sliding window counter using the cache service
+       - no optimization for bulk operations (not in contract)
+```
+
+#### Step 4: Human Reviews Both
+
+Review the tests and implementation together. Key questions:
+- Do the tests actually verify the contract, or do they just verify the implementation?
+- Is the implementation minimal, or did the AI over-engineer?
+- Are there contract requirements that lack test coverage?
+- Does the code follow existing project patterns?
+
+### Why This Order Matters
+
+Writing tests first with AI assistance avoids a common failure mode: the AI generates implementation code, then generates tests that simply confirm what the code already does rather than what it should do. When tests come from the contract (not the code), they serve as an independent check on correctness.
+
+### Relationship to Specs and Plans
+
+The lifecycle phases work together at different levels of detail:
+
+| Artifact | Scope | Answers |
+|----------|-------|---------|
+| Spec | Project | What to build and why |
+| Plan | Project | What files to change and in what order |
+| Contract | Component | What this piece does, precisely |
+| Tests | Component | How to verify it works |
+
+A single spec might produce multiple contracts - one per significant component in the plan. Not every component needs a contract; use judgment based on complexity.
+
+*This workflow is adapted from patterns in the ASO UI team's AI-first development approach (Abhinav Saraswat, OneAdobe/experience-success-studio-ui).*
+
 ## Cross-Repo Implementation
 
 When implementing across multiple repositories:
@@ -248,5 +350,6 @@ Before moving to Validation:
 ## See Also
 
 - [Validation Phase](04-validation.md)
+- [Contract Template](../03-templates/contract.md) - Template for component-level contracts
 - [MUST Rules](../05-guardrails/must-rules.md) - Critical rules for implementation
 - [Anti-Patterns](../05-guardrails/anti-patterns.md) - Common mistakes to avoid

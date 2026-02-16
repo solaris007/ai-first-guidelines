@@ -2,9 +2,15 @@
 
 ## Overview
 
-Cursor uses `.cursorrules` files to provide context and instructions for AI assistance. This is similar to Claude Code's CLAUDE.md but with Cursor-specific syntax and capabilities.
+Cursor uses rules files to provide context and instructions for AI assistance. This is similar to Claude Code's CLAUDE.md but with Cursor-specific syntax and capabilities.
 
-## .cursorrules
+There are two approaches:
+- **`.cursorrules`** - A single file in the project root (legacy, still supported)
+- **`.cursor/rules/`** - A directory of focused `.mdc` files with frontmatter metadata (modern, recommended)
+
+New projects SHOULD use the `.cursor/rules/` directory pattern. Existing projects can migrate incrementally - both approaches work side by side.
+
+## .cursorrules (Legacy)
 
 ### Location
 
@@ -166,6 +172,156 @@ Full-stack e-commerce application with React frontend and Node.js backend.
 - Don't use string concatenation for SQL
 - Don't skip TypeScript errors with @ts-ignore
 ```
+
+## .cursor/rules/ Directory Pattern
+
+The modern approach replaces the single `.cursorrules` file with a directory of focused `.mdc` (Markdown Cursor) files under `.cursor/rules/`. Each file targets a specific concern and can be activated conditionally based on file patterns.
+
+### Why Use Rules Directory
+
+- **Separation of concerns** - Each rule file owns one topic (workflow, testing, API design)
+- **Targeted activation** - Rules fire only when editing matching files, reducing noise
+- **Easier maintenance** - Teams can review and update rules independently
+- **Composability** - Rules can cross-reference each other
+
+### Directory Structure
+
+```
+my-project/
+├── .cursor/
+│   └── rules/
+│       ├── ai-workflow.mdc        # How the AI should approach development
+│       ├── project.mdc            # Tech stack and conventions
+│       ├── testing.mdc            # Test patterns and requirements
+│       ├── api-design.mdc         # API-specific rules
+│       └── backwards-compat.mdc   # Domain-specific constraints
+├── src/
+└── ...
+```
+
+### MDC File Format
+
+Each `.mdc` file has YAML frontmatter followed by a markdown body:
+
+```markdown
+---
+description: Development workflow and task approach
+globs:
+alwaysApply: true
+---
+
+# Development Workflow
+
+## Task Approach
+
+1. Read and understand the full context before making changes
+2. Break large tasks into focused commits
+3. Run tests after every change
+4. Verify existing functionality is not broken
+```
+
+#### Frontmatter Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `description` | string | Human-readable purpose of this rule file |
+| `globs` | string or list | File patterns that activate this rule (e.g., `"src/api/**"`) |
+| `alwaysApply` | boolean | When `true`, rule is active regardless of which file is open |
+
+When `alwaysApply` is `true`, `globs` is typically left empty - the rule applies everywhere. When `alwaysApply` is `false` or omitted, `globs` controls when the rule activates.
+
+### Rule Composition Patterns
+
+Organize rules by what they govern:
+
+**Workflow rules** - How the AI should approach tasks:
+
+```markdown
+---
+description: AI development workflow
+globs:
+alwaysApply: true
+---
+
+# Workflow
+
+- Understand the requirement before writing code
+- Prefer editing existing files over creating new ones
+- Run the linter before considering a task complete
+```
+
+**Project rules** - Tech stack, structure, and conventions:
+
+```markdown
+---
+description: Project conventions and tech stack
+globs:
+alwaysApply: true
+---
+
+# Project
+
+## Tech Stack
+- Runtime: Node.js 20, TypeScript 5
+- Framework: Express
+- Database: PostgreSQL with Prisma
+- Testing: Vitest
+
+## Conventions
+- File naming: kebab-case
+- Prefer named exports
+- Use strict TypeScript (no `any`)
+```
+
+**Domain rules** - Constraints for specific areas of the codebase:
+
+```markdown
+---
+description: API backwards compatibility rules
+globs: "src/api/**"
+alwaysApply: false
+---
+
+# API Compatibility
+
+- MUST NOT remove or rename existing endpoint paths
+- MUST NOT change response shape for existing fields
+- New fields MUST be optional
+- Deprecate before removing - add a sunset header first
+```
+
+**Cross-referencing** - Rules can reference each other using the `mdc:` protocol:
+
+```markdown
+See the project conventions in mdc:.cursor/rules/project.mdc
+before making architectural changes.
+```
+
+### When to Use alwaysApply vs Globs
+
+| Scenario | alwaysApply | globs |
+|----------|-------------|-------|
+| Coding standards, workflow | `true` | (empty) |
+| Component patterns | `false` | `"src/components/**"` |
+| API design rules | `false` | `"src/api/**"` |
+| Test conventions | `false` | `"**/*.test.*"` |
+| Database/migration rules | `false` | `"prisma/**"` |
+| Security rules | `true` | (empty) |
+
+Glob syntax follows standard patterns: `*` matches within a directory, `**` matches across directories, and `{a,b}` matches alternatives.
+
+### Migrating from .cursorrules
+
+If you have an existing `.cursorrules` file, split it into focused rule files:
+
+1. **Identify sections** - Most `.cursorrules` files have natural sections (tech stack, code style, testing, etc.)
+2. **Create rule files** - One `.mdc` file per section under `.cursor/rules/`
+3. **Set activation** - Universal rules get `alwaysApply: true`, domain rules get targeted `globs`
+4. **Remove the original** - Once all rules are migrated, delete `.cursorrules`
+
+You do not need to migrate all at once. Cursor reads both `.cursorrules` and `.cursor/rules/` simultaneously, so you can move sections incrementally.
+
+*The MDC rules examples in this section are adapted from the ASO UI team's AI-first configuration (Abhinav Saraswat, OneAdobe/experience-success-studio-ui).*
 
 ## Cursor Settings
 
@@ -381,7 +537,7 @@ Use best practices for data fetching.
 
 ### Update Regularly
 
-- Update `.cursorrules` when patterns change
+- Update rules files (`.cursorrules` or `.cursor/rules/`) when patterns change
 - Remove outdated rules
 - Add rules when you find yourself repeating corrections
 
@@ -410,7 +566,7 @@ Add a Working Context section to declare defaults and frequently-used commands. 
 
 ### Team Alignment
 
-- Commit `.cursorrules` to version control
+- Commit `.cursorrules` and/or `.cursor/rules/` to version control
 - Review rules changes in PRs
 - Document why rules exist (not just what they are)
 
@@ -430,13 +586,14 @@ If your team uses both Cursor and Claude Code:
 
 ## Comparison with CLAUDE.md
 
-| Aspect | .cursorrules | CLAUDE.md |
-|--------|--------------|-----------|
-| Format | Plain text | Markdown |
-| Location | Project root | Project root or workspace |
-| Hierarchy | Single file | Can inherit from parent dirs |
-| MCP Support | Via .cursor/mcp.json | Via .mcp.json |
-| IDE | Cursor only | Claude Code CLI |
+| Aspect | .cursorrules | .cursor/rules/*.mdc | CLAUDE.md |
+|--------|--------------|---------------------|-----------|
+| Format | Plain text | Markdown + YAML frontmatter | Markdown |
+| Location | Project root | `.cursor/rules/` directory | Project root or workspace |
+| Structure | Single file | Multiple focused files | Can inherit from parent dirs |
+| Conditional activation | No | Yes, via `globs` frontmatter | No |
+| MCP Support | Via .cursor/mcp.json | Via .cursor/mcp.json | Via .mcp.json |
+| IDE | Cursor only | Cursor only | Claude Code CLI |
 
 ## See Also
 
