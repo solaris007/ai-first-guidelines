@@ -233,7 +233,7 @@ search_splunk(
   "mcpServers": {
     "coralogix": {
       "command": "npx",
-      "args": ["-y", "@nickholden/coralogix-mcp-server"],
+      "args": ["-y", "@nickholden/coralogix-mcp-server@latest"],
       "env": {
         "CORALOGIX_API_KEY": "${CORALOGIX_API_KEY}",
         "CORALOGIX_REGION": "auto",
@@ -271,7 +271,7 @@ search_splunk(
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-postgres",
+        "@modelcontextprotocol/server-postgres@latest",
         "${DATABASE_URL}"
       ]
     }

@@ -125,7 +125,7 @@ my-workspace/
   "mcpServers": {
     "postgres-dev": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"]
+      "args": ["-y", "@modelcontextprotocol/server-postgres@latest", "${DATABASE_URL}"]
     }
   }
 }
