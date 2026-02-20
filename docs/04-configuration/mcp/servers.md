@@ -2,6 +2,13 @@
 
 A catalog of recommended MCP servers organized by category. Each entry includes setup instructions and key tools.
 
+## Host Configuration Note
+
+- JSON examples in this page use workspace `.mcp.json` format (`mcpServers`) for Claude Code and Cursor.
+- Codex CLI uses global `~/.codex/config.toml` with `[mcp_servers.<name>]` entries, or `codex mcp add/list/get`.
+- Server definitions are equivalent across hosts; only config storage format differs.
+- Official Codex guidance: [Codex MCP Docs](https://developers.openai.com/codex/mcp).
+
 ## Project Management
 
 ### mcp-atlassian (Jira + Confluence)

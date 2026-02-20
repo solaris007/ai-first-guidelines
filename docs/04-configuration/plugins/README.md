@@ -35,7 +35,7 @@ Copilot's functionality is primarily built-in:
 | Purpose | Enhance AI behavior/workflows | Connect to external tools |
 | Scope | AI assistant capabilities | Data and actions |
 | Examples | TDD enforcement, planning | Jira, Slack, databases |
-| Configuration | Tool-specific | `.mcp.json` (cross-tool) |
+| Configuration | Tool-specific | Host-specific (`.mcp.json`, `.cursor/mcp.json`, or `~/.codex/config.toml`) |
 
 **Use plugins for**: Workflows, patterns, AI behavior modification
 
