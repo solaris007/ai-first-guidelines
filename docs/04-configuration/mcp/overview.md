@@ -26,7 +26,7 @@
 ```
 
 **Components:**
-- **Host**: The AI tool (Claude Code, Cursor) that uses MCP
+- **Host**: The AI tool (Claude Code, Cursor, Codex) that uses MCP
 - **Server**: A process that translates MCP requests to service APIs
 - **Tools**: Actions the server exposes (e.g., `jira_get_issue`)
 - **Resources**: Data the server can provide (e.g., project lists)
@@ -84,12 +84,21 @@ list_pull_requests(owner="my-org", repo="my-app", state="open")
 |------|-------------|-----------------|
 | Claude Code | Native | `.mcp.json` |
 | Cursor | Native | `.cursor/mcp.json` |
+| Codex CLI | Native | `~/.codex/config.toml` (`[mcp_servers.<name>]`) |
 | VS Code + Continue | Via extension | Extension settings |
 | Other tools | Varies | Check documentation |
 
 ## Configuration
 
 ### File Location
+
+Use the location required by your host:
+
+- Claude Code: workspace `.mcp.json`
+- Cursor: workspace `.cursor/mcp.json` (or `.mcp.json`)
+- Codex CLI: global `~/.codex/config.toml` under `[mcp_servers.<name>]`
+
+### Workspace JSON (Claude Code, Cursor)
 
 Place `.mcp.json` in your workspace root:
 
@@ -117,6 +126,26 @@ my-workspace/
 }
 ```
 
+### Codex CLI Configuration
+
+Codex currently manages MCP servers in `~/.codex/config.toml`, typically via CLI commands:
+
+```bash
+codex mcp add github --url https://api.githubcopilot.com/mcp
+codex mcp list
+codex mcp get github --json
+```
+
+Equivalent TOML shape:
+
+```toml
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp"
+
+[mcp_servers.github.http_headers]
+Authorization = "Bearer ${GITHUB_TOKEN}"
+```
+
 ### Server Types
 
 **stdio (local process)**:
@@ -125,7 +154,7 @@ my-workspace/
   "mcpServers": {
     "postgres-dev": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"]
+      "args": ["-y", "@modelcontextprotocol/server-postgres@latest", "${DATABASE_URL}"]
     }
   }
 }
@@ -225,7 +254,7 @@ For internal tools or custom integrations, you can build MCP servers:
 
 1. **Document required setup** - Team members need to know what tokens to obtain
 2. **Test locally** - Verify servers connect before relying on them
-3. **Version control** - Commit `.mcp.json` (without secrets) for team consistency
+3. **Version control** - Commit workspace MCP config (`.mcp.json` or `.cursor/mcp.json`) when applicable, but do not commit global host config files like `~/.codex/config.toml`
 
 ### Usage
 
@@ -265,4 +294,5 @@ docker run --rm ghcr.io/example/mcp-server --help
 - [MCP Servers](servers.md) - Recommended server catalog
 - [MCP Workflows](workflows.md) - End-to-end examples
 - [Environment & Secrets](../env-secrets.md) - Managing credentials
+- [Codex MCP Docs](https://developers.openai.com/codex/mcp) - Codex MCP configuration and usage
 - [MCP Specification](https://spec.modelcontextprotocol.io)
