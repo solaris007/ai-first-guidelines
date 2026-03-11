@@ -129,6 +129,70 @@ docs/
 - **Review-friendly** - Specs can be reviewed like code
 - **Cross-project** - Single source of truth for multi-repo efforts
 
+## Shareable Workspace Documentation
+
+Beyond CLAUDE.md, effective workspaces include structured documentation that gives AI assistants deep project understanding. These files live at the workspace root alongside CLAUDE.md.
+
+### Recommended Workspace Documents
+
+| File | Purpose | When to create |
+|------|---------|---------------|
+| CLAUDE.md | Rules, conventions, defaults | Always |
+| ARCHITECTURE.md | System topology, dependencies, data flow | Multi-service systems |
+| TESTING.md | Test frameworks, patterns, per-repo testing guide | When test approaches vary across repos |
+| USE_CASES.md | Step-by-step cross-repo workflows | When common tasks span multiple repos |
+| AGENTS.md | Universal agent entry point (cross-tool) | When team uses multiple AI tools |
+
+### ARCHITECTURE.md Pattern
+
+An architecture document gives AI assistants the structural awareness needed for cross-repo work:
+
+- **System topology** - which services talk to which
+- **Dependency graph** - which repos depend on which
+- **Persistence layer** - databases, queues, caches
+- **API contracts** between services
+- **ASCII or Mermaid diagrams** for visual topology
+
+### TESTING.md Pattern
+
+A testing document eliminates guesswork about how to validate changes:
+
+- **Per-repo testing frameworks and commands** (e.g., Jest in frontend, pytest in backend)
+- **Test patterns** - unit, integration, e2e, and when to use each
+- **What to test for new features** - a checklist AI can follow
+
+### USE_CASES.md Pattern
+
+A use-cases document captures the cross-repo workflows that are hardest to discover:
+
+- Common cross-repo workflows as step-by-step guides
+- Example: "Adding a new API endpoint" - which repos to touch, in what order
+- Example: "Adding a new data pipeline" - configuration, worker, reporting changes
+
+### Example
+
+```markdown
+# Architecture
+
+## System Topology
+
+Frontend (React) --> API Gateway (Express)
+                        |
+                  +-----+-----+
+                  |           |
+              Auth Service  Worker Service
+                  |           |
+              PostgreSQL    SQS --> S3
+```
+
+### Maintenance
+
+- **Update when architecture changes** - stale diagrams cause incorrect assumptions
+- **Review quarterly** for accuracy
+- AI assistants reference these files automatically when planning cross-repo work
+
+Reference: The ASO team's aso-ai-toolkit provides a complete implementation of this pattern with setup/create/update lifecycle skills.
+
 ## Initial Setup Checklist
 
 ### 1. Create Workspace Directory

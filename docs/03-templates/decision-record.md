@@ -107,6 +107,18 @@ Number sequentially (001, 002, 003...). Remove usage instructions when done.
 
 - [Neutral consequence - neither good nor bad, just different]
 
+## Integrity Challenge (Optional)
+
+For significant decisions, run these checks before finalizing:
+
+- **Confirmation bias**: Did you genuinely consider alternatives, or did you start with a conclusion?
+- **Evidence basis**: Is the decision grounded in data, or in assumptions? What evidence supports each alternative?
+- **Chesterton's Fence**: If replacing an existing approach, do you understand WHY the current approach exists?
+- **Pre-mortem**: If this decision fails in 6 months, what went wrong?
+- **Dissent**: Who would disagree with this decision, and what would they say?
+
+These checks are optional but recommended for decisions that are expensive to reverse.
+
 ## Implementation
 
 ### Next Steps

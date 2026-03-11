@@ -57,7 +57,9 @@ AI tool configuration, plugins, and MCP integration:
 | Category | Documents |
 |----------|-----------|
 | **AI Tools** | [Claude Code](docs/04-configuration/ai-tools/claude-code.md), [Cursor](docs/04-configuration/ai-tools/cursor.md), [Copilot](docs/04-configuration/ai-tools/copilot.md) |
-| **Plugins** | [Overview](docs/04-configuration/plugins/README.md), [Superpowers](docs/04-configuration/plugins/superpowers.md) |
+| **Plugins** | [Overview](docs/04-configuration/plugins/README.md), [Superpowers](docs/04-configuration/plugins/superpowers.md), [Adobe Skills](docs/04-configuration/plugins/adobe-skills.md) |
+| **Skills** | [Skills Ecosystem](docs/04-configuration/skills/overview.md) - agentskills.io standard, SKILL.md format, package management |
+| **Cross-Tool** | [Cross-Tool Setup](docs/04-configuration/cross-tool-setup.md) - AGENTS.md, thin adapters, multi-tool config |
 | **MCP** | [Overview](docs/04-configuration/mcp/overview.md), [Servers](docs/04-configuration/mcp/servers.md), [Workflows](docs/04-configuration/mcp/workflows.md) |
 | **Secrets** | [Environment & Secrets](docs/04-configuration/env-secrets.md) |
 
@@ -79,6 +81,7 @@ Team adoption guides and case studies:
 | Document | Description |
 |----------|-------------|
 | [Onboarding Guide](docs/06-adoption/onboarding-guide.md) | Getting started as a new engineer on an AI-first team |
+| [AI Readiness Checklist](docs/06-adoption/ai-readiness-checklist.md) | Assess how prepared a repo is for AI-first development |
 
 ### [07 - Leadership](docs/07-leadership/)
 

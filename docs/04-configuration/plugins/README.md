@@ -9,6 +9,12 @@ Plugins add functionality on top of base AI tools:
 - **Skills** - Reusable patterns for common tasks
 - **Integrations** - Connect to additional services
 
+## Skills vs Plugins
+
+The AI ecosystem has converged on "skills" as the standard term for reusable behavioral packages (see [agentskills.io](https://agentskills.io/)). In Claude Code, "plugins" refers to the installation and marketplace mechanism, while "skills" refers to the individual capability packages. Both Superpowers and Adobe Skills are collections of skills distributed via the plugin mechanism.
+
+For details on the skills standard and cross-tool portability, see [Agent Skills Ecosystem](skills/overview.md).
+
 ## Available Plugins
 
 ### Claude Code
