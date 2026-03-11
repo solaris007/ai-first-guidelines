@@ -49,6 +49,7 @@ nav:
   - Home: index.md
   - Foundations:
     - Philosophy: 01-foundations/philosophy.md
+    - Substrate Model: 01-foundations/substrate-model.md
     - Workspace Setup: 01-foundations/workspace-setup.md
     - Tools Checklist: 01-foundations/tools-checklist.md
   - Development Lifecycle:
@@ -58,10 +59,13 @@ nav:
     - 3. Implementation: 02-lifecycle/03-implementation.md
     - 4. Validation: 02-lifecycle/04-validation.md
     - 5. Closure: 02-lifecycle/05-closure.md
+    - 6. Configuration Evolution: 02-lifecycle/06-config-evolution.md
   - Templates:
     - Spec Proposal: 03-templates/spec-proposal.md
     - Migration Plan: 03-templates/migration.md
     - Decision Record: 03-templates/decision-record.md
+    - Component Contract: 03-templates/contract.md
+    - Pull Request Template: 03-templates/pull-request-template.md
     - TODO.md: 03-templates/TODO.md
   - Configuration:
     - Overview: 04-configuration/README.md
@@ -70,6 +74,8 @@ nav:
       - Tool Permissions: 04-configuration/ai-tools/permissions.md
       - Cursor: 04-configuration/ai-tools/cursor.md
       - Copilot: 04-configuration/ai-tools/copilot.md
+      - Codex: 04-configuration/ai-tools/codex.md
+      - Gemini CLI: 04-configuration/ai-tools/gemini-cli.md
     - Plugins:
       - Overview: 04-configuration/plugins/README.md
       - Superpowers: 04-configuration/plugins/superpowers.md
@@ -78,13 +84,25 @@ nav:
       - Overview: 04-configuration/mcp/overview.md
       - Servers: 04-configuration/mcp/servers.md
       - Workflows: 04-configuration/mcp/workflows.md
+    - Skills:
+      - Ecosystem Overview: 04-configuration/skills/overview.md
+    - Cross-Tool Setup: 04-configuration/cross-tool-setup.md
     - Environment & Secrets: 04-configuration/env-secrets.md
   - Guardrails:
     - MUST Rules: 05-guardrails/must-rules.md
     - SHOULD Rules: 05-guardrails/should-rules.md
     - Anti-Patterns: 05-guardrails/anti-patterns.md
+    - AI Task Boundaries: 05-guardrails/ai-task-boundaries.md
   - Examples:
     - Workspace CLAUDE.md: examples/workspace-claude-md.md
     - Project CLAUDE.md: examples/project-claude-md.md
+  - Adoption:
+    - Onboarding Guide: 06-adoption/onboarding-guide.md
+    - AI Readiness Checklist: 06-adoption/ai-readiness-checklist.md
+  - Leadership:
+    - AI-First Leadership: 07-leadership/ai-first-leadership.md
+    - For Junior Engineers: 07-leadership/junior-engineers.md
+    - For Experienced Engineers: 07-leadership/experienced-engineers-guide.md
+    - For Domain Experts: 07-leadership/domain-experts.md
   - Presentations:
     - Overview: presentations/README.md

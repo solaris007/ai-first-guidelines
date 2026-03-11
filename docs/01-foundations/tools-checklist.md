@@ -75,6 +75,20 @@ Install via VS Code or JetBrains extensions
 
 **Required**: At least one AI assistant
 
+### Skill Management
+
+```bash
+# Install and manage agent skills
+npx skills add owner/repo     # Install skills from GitHub
+npx skills list               # Show installed skills
+npx skills find               # Discover skills interactively
+
+# Alternative: direct skill installation
+npx skills add https://github.com/adobe/skills --all
+```
+
+**Required**: No - optional but recommended for teams using reusable skills
+
 ## Language-Specific Tools
 
 ### Node.js / JavaScript
@@ -109,6 +123,9 @@ pip --version
 poetry --version
 # or
 uv --version
+
+# uv - fast Python package manager (used by many MCP servers)
+# Install: brew install uv
 ```
 
 ### Go
@@ -296,6 +313,10 @@ docker --version 2>/dev/null || echo "NOT INSTALLED"
 # Claude Code (if applicable)
 echo -n "Claude Code: "
 claude --version 2>/dev/null || echo "NOT INSTALLED"
+
+# Skills
+echo -n "Skills CLI: "
+npx skills --version 2>/dev/null | head -1 || echo "NOT INSTALLED (optional)"
 
 echo ""
 echo "=== Check Complete ==="

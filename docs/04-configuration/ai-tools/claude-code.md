@@ -207,6 +207,75 @@ The Working Context section accelerates AI workflows by declaring defaults and f
 
 See [Configuration Evolution](../../02-lifecycle/06-config-evolution.md) for guidance on maintaining this section over time.
 
+## Hooks
+
+Hooks are shell scripts that Claude Code runs automatically in response to events. They enable automation like running builds after file changes, syncing indexes, or enforcing conventions.
+
+### Configuration
+
+Define hooks in `settings.json` (project or user level):
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "command": "./scripts/post-edit-hook.sh"
+      }
+    ]
+  }
+}
+```
+
+### Available Hook Events
+
+| Event | Fires when | Common use |
+|-------|-----------|------------|
+| PostToolUse | After any tool executes | Auto-build, lint, sync indexes |
+| PreToolUse | Before a tool executes | Validation, confirmation gates |
+
+### Practical Examples
+
+**Auto-build docs after markdown changes:**
+```bash
+#!/bin/bash
+# .claude/hooks/post-edit-build-docs.sh
+if echo "$CLAUDE_TOOL_INPUT" | grep -q '\.md"'; then
+  mkdocs build --quiet
+fi
+```
+
+**Sync an index file when new entries are added:**
+```bash
+#!/bin/bash
+# .claude/hooks/sync-index.sh
+node scripts/rebuild-index.js
+```
+
+**Remind to update changelog when config files change:**
+```bash
+#!/bin/bash
+# .claude/hooks/changelog-reminder.sh
+if echo "$CLAUDE_TOOL_INPUT" | grep -q 'config'; then
+  echo "Remember to update CHANGELOG.md with this configuration change."
+fi
+```
+
+**Run tests after code edits:**
+```bash
+#!/bin/bash
+# .claude/hooks/post-edit-test.sh
+npm test --silent 2>&1 | tail -5
+```
+
+### Best Practices
+
+- **Keep hooks fast** (under 5 seconds) - they block the agent
+- **Use `matcher`** to scope hooks to specific tools (Edit, Write, Bash)
+- **Store hooks in `.claude/hooks/`** for discoverability
+- **Hooks that fail** will surface feedback to the agent, allowing it to self-correct
+
 ## Key Commands
 
 | Command | Purpose |

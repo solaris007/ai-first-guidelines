@@ -12,11 +12,15 @@ This section covers configuration for AI-assisted development tools, plugins, an
 │   └── copilot.md      # GitHub Copilot
 ├── plugins/            # Extensions and plugins by tool
 │   ├── README.md       # Plugin index
-│   └── superpowers.md  # Claude Code superpowers plugin
+│   ├── superpowers.md  # Claude Code superpowers plugin
+│   └── adobe-skills.md # Adobe Skills for AEM Edge Delivery
+├── skills/             # Agent skills ecosystem
+│   └── overview.md     # agentskills.io standard, SKILL.md format, package mgmt
 ├── mcp/                # Model Context Protocol (cross-tool)
 │   ├── overview.md     # What MCP is, why it matters
 │   ├── servers.md      # Recommended server catalog
 │   └── workflows.md    # End-to-end workflow examples
+├── cross-tool-setup.md # AGENTS.md, multi-tool config, thin adapters
 └── env-secrets.md      # Environment variables and secrets management
 ```
 
@@ -36,6 +40,19 @@ This section covers configuration for AI-assisted development tools, plugins, an
 | Plugin | For Tool | Documentation |
 |--------|----------|---------------|
 | [Superpowers](plugins/superpowers.md) | Claude Code | Structured workflows, TDD, planning |
+| [Adobe Skills](plugins/adobe-skills.md) | Claude Code | AEM Edge Delivery Services skills |
+
+### Skills Ecosystem
+
+| Document | Description |
+|----------|-------------|
+| [Skills Overview](skills/overview.md) | agentskills.io standard, SKILL.md format, progressive loading, package management |
+
+### Cross-Tool Configuration
+
+| Document | Description |
+|----------|-------------|
+| [Cross-Tool Setup](cross-tool-setup.md) | AGENTS.md, thin adapters, multi-tool MCP sync, directory layout |
 
 ### MCP (Model Context Protocol)
 
