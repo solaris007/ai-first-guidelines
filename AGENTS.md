@@ -23,7 +23,7 @@ Documentation organized in numbered sections covering the full AI-first developm
 | [04 - Configuration](docs/04-configuration/) | ACI design, Claude Code, Cursor, Codex, MCP, skills, cross-tool setup |
 | [05 - Guardrails](docs/05-guardrails/) | MUST/SHOULD rules, mechanical enforcement, anti-patterns, task boundaries |
 | [06 - Adoption](docs/06-adoption/) | Onboarding guide, AI readiness checklist |
-| [07 - Leadership](docs/07-leadership/) | For leaders, junior engineers, experienced engineers, domain experts |
+| [07 - Leadership](docs/07-leadership/) | For leaders, junior engineers, experienced engineers, domain experts, AI-native Phase 1 |
 | [Examples](docs/examples/) | Workspace CLAUDE.md, project CLAUDE.md, .mcp.json |
 | [What's New](docs/LATEST.md) | Recent changes and additions |
 
