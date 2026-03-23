@@ -99,6 +99,7 @@ Guidance for engineering leaders navigating AI-first:
 | [For Junior Engineers](docs/07-leadership/junior-engineers.md) | Building depth alongside AI fluency |
 | [For Domain Experts](docs/07-leadership/domain-experts.md) | Growing into production as a non-engineer |
 | [For Experienced Engineers](docs/07-leadership/experienced-engineers-guide.md) | When the tools changed - the identity shift |
+| [AI-Native Phase 1](docs/07-leadership/ai-native-engineering-phase1.md) | Framework, maturity model, scorecard, and playbook for Phase 1 |
 
 ### [Examples](docs/examples/)
 
