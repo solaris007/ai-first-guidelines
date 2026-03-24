@@ -100,6 +100,9 @@ Guidance for engineering leaders navigating AI-first:
 | [For Domain Experts](docs/07-leadership/domain-experts.md) | Growing into production as a non-engineer |
 | [For Experienced Engineers](docs/07-leadership/experienced-engineers-guide.md) | When the tools changed - the identity shift |
 | [AI-Native Phase 1](docs/07-leadership/ai-native-engineering-phase1.md) | Framework, maturity model, scorecard, and playbook for Phase 1 |
+| [AI-Native Leveling (IC)](docs/07-leadership/ai-native-leveling-ic.md) | AI-native skill expectations per IC level (P10-P55) |
+| [AI-Native Leveling (Manager)](docs/07-leadership/ai-native-leveling-manager.md) | AI-native skill expectations per manager band (M2-M6) |
+| [AI-Native Leveling (Domain Expert)](docs/07-leadership/ai-native-leveling-domain-expert.md) | AI-native skill expectations per domain expert level (D1-D4) |
 
 ### [Examples](docs/examples/)
 
