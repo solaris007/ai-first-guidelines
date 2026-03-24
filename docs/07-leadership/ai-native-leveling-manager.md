@@ -88,7 +88,7 @@ Creating the conditions for domain experts to be productive - engineering buddy 
 |------|-------------|
 | M2-M3 | Assigns engineering buddies for domain experts. Reviews domain expert PRs with appropriate expectations (not engineer-level code style, but correctness and safety). Creates sandbox environments where domain experts can experiment safely. |
 | M4 | Establishes domain expert progression paths across teams. Calibrates review standards that are rigorous without being gatekeeping. Ensures harnesses and CI pipelines support non-engineer contributors. |
-| M5-M6 | Defines the domain expert operating model for the org. Creates career paths and growth frameworks (D1-D4). Advocates for domain expert roles in headcount planning. Ensures domain expertise flows into product, not just into reports. |
+| M5-M6 | Defines the domain expert operating model for the org. Creates career paths and growth frameworks (D10-D55). Advocates for domain expert roles in headcount planning. Ensures domain expertise flows into product, not just into reports. |
 
 ## Glossary
 
