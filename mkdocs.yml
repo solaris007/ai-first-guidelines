@@ -54,6 +54,10 @@ nav:
     - Substrate Model: 01-foundations/substrate-model.md
     - Workspace Setup: 01-foundations/workspace-setup.md
     - Tools Checklist: 01-foundations/tools-checklist.md
+    - Agent DX Vision: 01-foundations/agent-dx-vision.md
+    - Skill Distribution: 01-foundations/skill-distribution.md
+    - Blackboard Mental Models: 01-foundations/blackboard-mental-models.md
+    - Agentic Memory Review: 01-foundations/agentic-memory-review.md
   - Development Lifecycle:
     - Overview: 02-lifecycle/overview.md
     - 1. Design & Spec: 02-lifecycle/01-design-spec.md
@@ -63,6 +67,23 @@ nav:
     - 5. Closure: 02-lifecycle/05-closure.md
     - Multi-Session Patterns: 02-lifecycle/multi-session-patterns.md
     - 6. Configuration Evolution: 02-lifecycle/06-config-evolution.md
+    - Evaluation-Driven Development:
+      - Overview: 02-lifecycle/eval-driven-development.md
+      - Implementation Plan: 02-lifecycle/edd-implementation-plan.md
+      - Quick Start: 02-lifecycle/evaluation-quickstart.md
+      - Evaluation Guide: 02-lifecycle/evaluation-guide.md
+      - Prompt Optimization: 02-lifecycle/prompt-optimization.md
+      - Tool Replay: 02-lifecycle/tool-replay.md
+      - Dual Tracing: 02-lifecycle/dual-tracing.md
+      - Unified Optimization Flow: 02-lifecycle/unified-optimization-flow.md
+      - Optimization Process Diagram: 02-lifecycle/optimization-process-diagram.md
+      - LLM-Powered Evals: 02-lifecycle/llm-powered-evals.md
+      - LLM-Powered Evals Requirements: 02-lifecycle/llm-powered-evals-requirements.md
+      - Self-Improving Agents: 02-lifecycle/self-improving-agents.md
+      - Dataset Persistence Proposal: 02-lifecycle/dataset-persistence-proposal.md
+      - Evals Dashboard Architecture: 02-lifecycle/evals-dashboard-architecture.md
+      - LangSmith Evaluation Fixes: 02-lifecycle/langsmith-evaluation-fixes.md
+    - Shadow Mode Migration: 02-lifecycle/shadow-mode-migration.md
   - Templates:
     - Spec Proposal: 03-templates/spec-proposal.md
     - Migration Plan: 03-templates/migration.md
@@ -89,6 +110,7 @@ nav:
       - Workflows: 04-configuration/mcp/workflows.md
     - Skills:
       - Ecosystem Overview: 04-configuration/skills/overview.md
+      - Auto-Improve Agent: 04-configuration/skills/auto-improve-agent.md
     - ACI Design: 04-configuration/aci-design.md
     - Cross-Tool Setup: 04-configuration/cross-tool-setup.md
     - Environment & Secrets: 04-configuration/env-secrets.md
@@ -98,6 +120,8 @@ nav:
     - Mechanical Enforcement: 05-guardrails/mechanical-enforcement.md
     - Anti-Patterns: 05-guardrails/anti-patterns.md
     - AI Task Boundaries: 05-guardrails/ai-task-boundaries.md
+    - Vibecoding Best Practices: 05-guardrails/vibecoding-best-practices.md
+    - Repo Consolidation Decision: 05-guardrails/repo-consolidation-decision.md
   - Examples:
     - Workspace CLAUDE.md: examples/workspace-claude-md.md
     - Project CLAUDE.md: examples/project-claude-md.md
@@ -114,3 +138,10 @@ nav:
     - Overview: presentations/README.md
     - Intro: presentations/intro.md
     - Getting Started: presentations/getting-started.md
+    - Blackboard Overview: presentations/blackboard-overview.md
+    - SMC Components: presentations/smc-components.md
+    - Evals:
+      - Overview: presentations/evals/README.md
+      - Evaluation Presentation: presentations/evals/evaluation-presentation.md
+      - Handout: presentations/evals/handout.md
+      - Speaker Notes: presentations/evals/speaker-notes.md
