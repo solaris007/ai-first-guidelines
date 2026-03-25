@@ -15,6 +15,7 @@ This guide defines AI-native skill expectations for engineering managers across 
     - [2. Team Enablement and Adoption](#2-team-enablement-and-adoption)
     - [3. Operational Excellence for AI](#3-operational-excellence-for-ai)
     - [4. Domain Expert Integration](#4-domain-expert-integration)
+    - [5. Improvement Leverage (Capacity Reinvestment)](#5-improvement-leverage-capacity-reinvestment)
 - [Glossary](#glossary)
 - [See Also](#see-also)
 
@@ -98,6 +99,17 @@ Creating the conditions for domain experts to be productive - engineering buddy 
 | M5 | Defines the domain expert operating model for the org. Creates career paths and growth frameworks (D10-D55). Advocates for domain expert roles in headcount planning. Ensures domain expertise flows into product, not just into reports. |
 | M6 | Champions the domain expert model across OneAEM or CXO. Influences how other organizations integrate non-engineer contributors. Advocates for domain expert career paths at the enterprise level. Shapes how domain expertise is valued in cross-org planning and strategy. |
 
+### 5. Improvement Leverage (Capacity Reinvestment)
+
+The deliberate direction of AI-generated capacity toward improvements, quality, security, and learning. Ensures freed capacity is structurally invested, not absorbed into feature velocity.
+
+| Band | Description |
+|------|-------------|
+| M2-M3 | Tracks where AI-generated capacity goes on the team. Ensures freed time is visibly allocated to improvements, not silently absorbed into more feature work. Makes improvement investment a standing agenda item. |
+| M4 | Establishes structural mechanisms (improvement sprints, dedicated backlog, frontier engineer allocation) that direct AI-generated capacity toward improvements across managed teams. Reports on improvement investment as a metric. |
+| M5 | Defines org-level policies for improvement leverage. Sets expectations that AI efficiency gains are reinvested, not just harvested for velocity. Connects improvement investment to system maturity and team capability growth. |
+| M6 | Champions improvement leverage across OneAEM or CXO. Influences enterprise-level expectations that AI adoption includes investment in quality and capability, not just speed. Shapes how the broader org measures the return on AI-native practices. |
+
 ## Glossary
 
 Key terms used in this guide, linked to their definitions in the AI-native guidelines.
@@ -110,7 +122,8 @@ Key terms used in this guide, linked to their definitions in the AI-native guide
 | Maturity Model | L0-L4 scale of how effectively AI can operate in a codebase | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
 | Scorecard | 5-dimension assessment (validation speed, environment fidelity, traceability, coupling, ownership) scored 0-3 | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
 | Frontier Engineer | Catalysts of AI-native transformation - Harness Engineer and/or AI Orchestrator specializations | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
-| The 5% Rule | Floor allocation to proactive engineering work (quality, security, learning) - AI is an accelerator, so this floor should rise as AI frees up capacity | [AI-First Leadership](ai-first-leadership.md) |
+| Improvement Leverage | The deliberate direction of AI-generated capacity toward improvements, quality, security, and learning - rather than absorbing it into feature velocity | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
+| The 5% Rule (historical) | Pre-AI baseline allocation of human capacity to proactive engineering work. In AI-native orgs, this concept evolves into Improvement Leverage. | [AI-First Leadership](ai-first-leadership.md) |
 | Engineering Buddy | Assigned engineering mentor for domain experts | [Domain Experts](domain-experts.md) |
 | Substrate Boundary | The line between fluid (safe for domain experts to own) and durable (requires engineering rigor) changes | [Substrate Model](../01-foundations/substrate-model.md) |
 
