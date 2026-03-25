@@ -124,6 +124,19 @@ The human side - reviewing AI output critically, knowing when AI is wrong, produ
 | P50 | Defines the accountability model for AI-assisted work across teams. Creates mechanical enforcement (automated gates, structural tests) that catch issues before review. Models the judgment others learn from. |
 | P55 | Sets the quality and accountability bar for the org. Defines what "invest in brakes" means in practice. Ensures AI-native practices do not erode production judgment, security, or reliability. |
 
+**6. Improvement Leverage (Capacity Reinvestment)**
+
+The deliberate direction of AI-generated capacity toward improvements, quality, security, and learning - rather than absorbing it into feature velocity. Evolves the pre-AI "5% Rule" into a scalable framework.
+
+| Level | Description |
+|-------|-------------|
+| P10 | Uses time saved by AI to learn deeper skills (debugging, architecture, production systems) rather than just shipping more features. Tracks what AI handles well and invests freed time in areas AI can't. |
+| P20 | Identifies recurring manual work that AI could automate and proposes improvements. Uses AI-generated capacity to improve test coverage, documentation, and code quality in areas they touch. |
+| P30 | Systematically uses AI to create capacity for system-level improvements - better validation pipelines, structured logging, environment fidelity. Maintains an improvement backlog alongside the feature backlog. |
+| P40 | Designs workflows where AI-generated efficiency gains are visibly redirected to improvements. Quantifies the capacity AI creates and advocates for reinvesting it. Models this behavior for the team. |
+| P50 | Builds tools and patterns that make improvement leverage structural - not dependent on individual discipline. Creates automated quality improvements that scale with AI usage across teams. |
+| P55 | Defines the org's approach to improvement leverage. Designs systems where increased AI effectiveness automatically generates increased investment in quality, security, and learning. The org gets better as it gets faster. |
+
 #### Sample Level Vignettes (IC)
 
 **P10:**
@@ -200,6 +213,17 @@ Creating the conditions for domain experts to be productive - engineering buddy 
 | M4 | Establishes domain expert progression paths across teams. Calibrates review standards that are rigorous without being gatekeeping. Ensures harnesses and CI pipelines support non-engineer contributors. |
 | M5 | Defines the domain expert operating model for the org. Creates career paths and growth frameworks (D10-D55). Advocates for domain expert roles in headcount planning. Ensures domain expertise flows into product, not just into reports. |
 | M6 | Champions the domain expert model across OneAEM or CXO. Influences how other organizations integrate non-engineer contributors. Advocates for domain expert career paths at the enterprise level. Shapes how domain expertise is valued in cross-org planning and strategy. |
+
+**5. Improvement Leverage (Capacity Reinvestment)**
+
+The deliberate direction of AI-generated capacity toward improvements, quality, security, and learning. Ensures freed capacity is structurally invested, not absorbed into feature velocity.
+
+| Band | Description |
+|------|-------------|
+| M2-M3 | Tracks where AI-generated capacity goes on the team. Ensures freed time is visibly allocated to improvements, not silently absorbed into more feature work. Makes improvement investment a standing agenda item. |
+| M4 | Establishes structural mechanisms (improvement sprints, dedicated backlog, frontier engineer allocation) that direct AI-generated capacity toward improvements across managed teams. Reports on improvement investment as a metric. |
+| M5 | Defines org-level policies for improvement leverage. Sets expectations that AI efficiency gains are reinvested, not just harvested for velocity. Connects improvement investment to system maturity and team capability growth. |
+| M6 | Champions improvement leverage across OneAEM or CXO. Influences enterprise-level expectations that AI adoption includes investment in quality and capability, not just speed. Shapes how the broader org measures the return on AI-native practices. |
 
 #### Sample Level Vignettes (Manager)
 
@@ -289,6 +313,19 @@ Scaling domain impact beyond individual production - mentoring other domain expe
 | D50 | Builds the domain expert community - organizes guild meetings, creates onboarding paths, defines what "good" looks like at each level. Shapes hiring criteria for domain expert roles. |
 | D55 | Defines how domain expertise scales in the org. Advocates for domain expert roles at leadership level. Creates frameworks that other teams adopt for integrating domain experts. The domain expert program is stronger because of this person's leadership. |
 
+**5. Improvement Leverage (Capacity Reinvestment)**
+
+The deliberate direction of AI-generated capacity toward domain quality improvements - rather than absorbing it into producing more PoCs or features.
+
+| Level | Description |
+|-------|-------------|
+| D10 | Uses time saved by AI to deepen domain knowledge and learn production skills, not just produce more prototypes. Invests in understanding why things work, not just what works. |
+| D20 | Identifies domain-specific quality improvements that AI makes possible - better validation data, more thorough acceptance criteria, improved domain documentation. |
+| D30 | Uses AI-generated capacity to invest in domain knowledge encoding - creating reusable validation frameworks, domain-specific test suites, and reference implementations that raise quality for everyone. |
+| D40 | Systematically directs AI-generated efficiency toward domain quality improvements - better audit rules, more comprehensive scoring rubrics, improved domain models. Maintains a domain improvement backlog. |
+| D50 | Builds domain-specific improvement patterns that other domain experts adopt. Creates tools and templates that make domain quality investment structural, not dependent on individual initiative. |
+| D55 | Defines how domain expertise investment scales with AI across the org. Ensures AI-generated capacity in domain work flows toward deeper domain intelligence, not just higher output volume. |
+
 #### Sample Level Vignettes (Domain Expert)
 
 **D10:**
@@ -329,7 +366,8 @@ A D55 defines how domain expertise flows into the product at org level. They've 
 | Maturity Model | L0-L4 scale of how effectively AI can operate in a codebase | `07-leadership/ai-native-engineering-phase1.md` |
 | Scorecard | 5-dimension assessment (validation speed, environment fidelity, traceability, coupling, ownership) scored 0-3 | `07-leadership/ai-native-engineering-phase1.md` |
 | Frontier Engineer | Catalysts of AI-native transformation - Harness Engineer and/or AI Orchestrator specializations | `07-leadership/ai-native-engineering-phase1.md` |
-| The 5% Rule | Floor allocation to proactive engineering work (quality, security, learning) - AI is an accelerator, so this floor should rise as AI frees up capacity | `07-leadership/ai-first-leadership.md` |
+| Improvement Leverage | The deliberate direction of AI-generated capacity toward improvements, quality, security, and learning - rather than absorbing it into feature velocity. Replaces the pre-AI "5% Rule" as the active framework. | `07-leadership/ai-native-engineering-phase1.md` |
+| The 5% Rule (historical) | Pre-AI baseline allocation of human capacity to proactive engineering work. In AI-native orgs, this concept evolves into Improvement Leverage. | `07-leadership/ai-first-leadership.md` |
 | Engineering Buddy | Assigned engineering mentor for domain experts | `07-leadership/domain-experts.md` |
 | Substrate Boundary | The line between fluid (safe for domain experts to own) and durable (requires engineering rigor) changes | `01-foundations/substrate-model.md` |
 
