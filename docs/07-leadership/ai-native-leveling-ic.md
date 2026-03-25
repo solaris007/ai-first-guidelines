@@ -142,7 +142,7 @@ Key terms used in this guide, linked to their definitions in the AI-native guide
 | Maturity Model | L0-L4 scale of how effectively AI can operate in a codebase | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
 | Scorecard | 5-dimension assessment (validation speed, environment fidelity, traceability, coupling, ownership) scored 0-3 | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
 | Frontier Engineer | Catalysts of AI-native transformation - Harness Engineer and/or AI Orchestrator specializations | [Phase 1 White Paper](ai-native-engineering-phase1.md) |
-| The 5% Rule | Baseline allocation to proactive engineering work (quality, security, learning) | [AI-First Leadership](ai-first-leadership.md) |
+| The 5% Rule | Floor allocation to proactive engineering work (quality, security, learning) - AI is an accelerator, so this floor should rise as AI frees up capacity | [AI-First Leadership](ai-first-leadership.md) |
 | Engineering Buddy | Assigned engineering mentor for domain experts | [Domain Experts](domain-experts.md) |
 | Substrate Boundary | The line between fluid (safe for domain experts to own) and durable (requires engineering rigor) changes | [Substrate Model](../01-foundations/substrate-model.md) |
 
