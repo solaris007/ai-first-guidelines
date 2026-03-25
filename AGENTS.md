@@ -29,6 +29,12 @@ Documentation organized in numbered sections covering the full AI-first developm
 
 For the full navigation with per-document descriptions, see [README.md](README.md).
 
+## Related Repositories
+
+- Platform architecture: [mysticat-architecture](https://github.com/adobe/mysticat-architecture)
+- Org-level RFCs: [aem-sites-architecture](https://github.com/Adobe-AEM-Sites/aem-sites-architecture)
+- **Where does a new doc go?** See the [Documentation Decision Guide](https://github.com/adobe/mysticat-architecture/blob/main/DOCUMENTATION-GUIDE.md)
+
 ## Conventions
 
 - All content is markdown
